@@ -1,6 +1,10 @@
 import streamlit as st
 from backtest import run_backtest  # 假设你写的是 run_backtest 函数
 from trend_utils import resample_ma
+import tushare as ts
+
+ts.set_token(st.secrets["TUSHARE_TOKEN"])
+pro = ts.pro_api()
 
 st.title("📈 Stock MA Trend Checker")
 
